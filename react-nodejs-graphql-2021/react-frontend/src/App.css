@@ -1,0 +1,8 @@
+.form-container {
+  width: 300px !important;
+  margin: auto;
+}
+.ui.teal.button,
+.ui.teal.buttons .button:focus {
+  background-color: #008c86;
+}
