@@ -6,3 +6,8 @@
 .ui.teal.buttons .button:focus {
   background-color: #008c86;
 }
+.single-post-user-img {
+  width: 130px;
+  height: auto;
+  font-size: 0.92857143rem;
+}

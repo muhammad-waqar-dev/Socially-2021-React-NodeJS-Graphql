@@ -1,5 +1,5 @@
 //import axios from "axios";
-import * as authActions from "./auth";
+import * as authActions from "./Auth";
 
 // export const VERIFIED_TOKEN = axios.interceptors.request.use(
 //   (config) => {

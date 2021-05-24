@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { LIKE_POST } from "../actions/Like";
 import { useMutation } from "@apollo/react-hooks";
+import MyPopup from "./MyPopup";
 
 const LikeButton = ({ userData, post: { id, likes, likeCount } }) => {
   const [liked, setLiked] = useState(false);
@@ -39,12 +40,14 @@ const LikeButton = ({ userData, post: { id, likes, likeCount } }) => {
     </Button>
   );
   return (
-    <Button as="div" labelPosition="right" onClick={likePost}>
-      {likeButton}
-      <Label basic color="teal" pointing="left">
-        {likeCount}
-      </Label>
-    </Button>
+    <MyPopup content={liked ? "UnLike" : "Like"}>
+      <Button as="div" labelPosition="right" onClick={likePost}>
+        {likeButton}
+        <Label basic color="teal" pointing="left">
+          {likeCount}
+        </Label>
+      </Button>
+    </MyPopup>
   );
 };
 

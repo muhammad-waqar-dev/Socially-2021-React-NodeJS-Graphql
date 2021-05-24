@@ -23,7 +23,29 @@ export const GET_ALL_POSTS = gql`
     }
   }
 `;
-
+export const GET_SINGLE_POST = gql`
+  query ($postId: ID!) {
+    getPost(postId: $postId) {
+      id
+      body
+      username
+      createdAt
+      likeCount
+      commentCount
+      likes {
+        id
+        username
+        createdAt
+      }
+      comments {
+        id
+        body
+        username
+        createdAt
+      }
+    }
+  }
+`;
 export const CREATE_POST = gql`
   mutation createPost($body: String!) {
     createPost(body: $body) {
@@ -45,5 +67,10 @@ export const CREATE_POST = gql`
         createdAt
       }
     }
+  }
+`;
+export const DELETE_POST = gql`
+  mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId)
   }
 `;
